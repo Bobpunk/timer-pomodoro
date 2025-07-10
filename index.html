@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Pomodoro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="pomodoro-container">
+        <h1>Timer Pomodoro</h1>
+
+        <div class="modo-botoes">
+            <button id="btn-pomodoro" class="modo-btn ativo">Pomodoro</button>
+            <button id="btn-pausa-curta" class="modo-btn">Pausa Curta</button>
+            <button id="btn-pausa-longa" class="modo-btn">Recompensa</button>
+        </div>
+
+        <div class="timer">
+            <span id="minutos">30</span>
+            <span>:</span>
+            <span id="segundos">00</span>
+        </div>
+
+        <div class="controle-botoes">
+            <button id="btn-iniciar">Iniciar</button>
+            <button id="btn-pausar" style="display: none;">Pausar</button>
+            <button id="btn-reiniciar">Reiniciar</button>
+        </div>
+        
+        <div class="contador">
+            <p>Ciclos completos: <span id="ciclos">0</span></p>
+        </div>
+
+        <div class="assinatura">
+            <p>Criado por José Cecilio</p>
+            <div class="social-links">
+                <a href="https://github.com/Bobpunk/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jcfonsecajunior/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="info-container">
+            <button id="btn-info" class="info-btn">
+                <i class="fa-solid fa-question"></i>
+            </button>
+            <div id="info-panel" class="info-panel">
+                <h2>Como Usar o Pomodoro?</h2>
+                <p>A Técnica Pomodoro é um método de gerenciamento de tempo que usa um cronômetro para dividir o trabalho em intervalos.</p>
+                <ol>
+                    <li><strong>Escolha uma tarefa:</strong> Decida o que você vai fazer (ler, estudar, programar, etc).</li>
+                    <li><strong>Configure o Pomodoro:</strong> Inicie o timer, configurado para 30 minutos de foco.</li>
+                    <li><strong>Trabalhe na tarefa:</strong> Mantenha o foco total, sem distrações, até o alarme tocar.</li>
+                    <li><strong>Faça uma pausa curta:</strong> Ao final do tempo, faça uma pausa de 5 minutos.</li>
+                    <li><strong>Repita:</strong> Após a pausa, inicie outro Pomodoro para continuar sua atividade.</li>
+                    <li><strong>Receba sua recompensa:</strong> Após quatro "Pomodoros", você ganha uma recompensa de 30 minutos livres!</li>
+                    <li><strong>Complete o ciclo:</strong> Ao final de 4 pomodoros, você terá focado por 2 horas e descansado por 45 minutos.</li>
+                </ol>
+            </div>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

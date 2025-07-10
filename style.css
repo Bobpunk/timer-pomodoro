@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='40' cy='50' rx='30' ry='25' fill='%23d95550'/%3E%3Cpath d='M40,25 C 45,15 55,15 55,25' stroke='%23388e3c' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 110px 110px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.pomodoro-container {
+    background: #e74c3c;
+    border-radius: 48% 52% 45% 55% / 65% 62% 38% 35%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), inset 5px -5px 15px rgba(0,0,0,0.15);
+    width: 90%;
+    max-width: 900px; 
+    height: 900px; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    padding: 0 40px;
+    text-align: center;
+    border: none;
+}
+
+.pomodoro-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg);
+    width: 80px;
+    height: 40px;
+    background: #27ae60;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+h1 {
+    font-size: 4.5em; 
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    white-space: nowrap;
+    margin: 0;
+}
+
+.modo-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+}
+
+.modo-btn {
+    background: none;
+    border: 2px solid transparent;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6em; 
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.modo-btn:hover {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.modo-btn.ativo {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.timer {
+    font-size: 9rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.controle-botoes {
+    margin: 0;
+}
+
+.controle-botoes button {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    padding: 16px 32px;
+    font-size: 1.3em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.controle-botoes button:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+#btn-reiniciar {
+    background: none;
+    border-color: transparent;
+}
+
+.contador {
+    font-size: 1.3em;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.assinatura {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+.assinatura p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 3em;
+    font-weight: 500;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 5em;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.info-container {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.info-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #27ae60;
+    color: white;
+    border: 3px solid white;
+    font-size: 1.8em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.info-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.info-panel {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px); 
+    transform: translateY(-50%);
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.98);
+    color: #333;
+    padding: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    transition: width 0.4s ease-out, opacity 0.3s ease-out, padding 0.4s ease-out;
+    white-space: normal;
+    text-align: left;
+}
+
+.info-panel.ativo {
+    width: 350px;
+    opacity: 1;
+    padding: 20px;
+}
+
+.info-panel h2 {
+    color: #e74c3c;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.info-panel p, .info-panel li {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-panel ol {
+    padding-left: 20px;
+}
+
+.info-panel strong {
+    color: #27ae60;
+}
